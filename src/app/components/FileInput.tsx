@@ -34,14 +34,15 @@ export default function FileInput({ label, onContentChange }: FileInputProps) {
         <div className="flex items-center space-x-2">
           <button
             onClick={() => setIsPasteMode(true)}
-            className={`rounded-md px-3 py-1 text-sm ${
-              isPasteMode
+            className={`rounded-md px-3 py-1 text-sm ${isPasteMode
                 ? 'bg-blue-600 text-white'
                 : 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300'
-            }`}
+              }`}
           >
             Paste Text
           </button>
+
+          {/* 
           <button
             onClick={() => {
               setIsPasteMode(false);
@@ -54,7 +55,8 @@ export default function FileInput({ label, onContentChange }: FileInputProps) {
             }`}
           >
             Upload File
-          </button>
+          </button> 
+          */}
         </div>
       </div>
 

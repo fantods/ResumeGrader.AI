@@ -7,11 +7,22 @@ const anthropic = new Anthropic({
 
 export async function POST(request: Request) {
     try {
+        if (!process.env.ANTHROPIC_API_KEY) {
+            throw new Error('ANTHROPIC_API_KEY is not configured');
+        }
+
         const { resumeContent, jobPostingContent } = await request.json();
 
         if (!resumeContent || !jobPostingContent) {
             return NextResponse.json(
-                { error: 'Resume and job posting content are required' },
+                {
+                    error: 'Validation Error',
+                    message: 'Resume and job posting content are required',
+                    details: {
+                        resumeContent: !resumeContent ? 'Resume content is required' : null,
+                        jobPostingContent: !jobPostingContent ? 'Job posting content is required' : null,
+                    }
+                },
                 { status: 400 }
             );
         }
@@ -51,8 +62,24 @@ export async function POST(request: Request) {
         return NextResponse.json(response);
     } catch (error) {
         console.error('Error analyzing resume:', error);
+
+        if (error instanceof Anthropic.APIError) {
+            return NextResponse.json(
+                {
+                    error: 'API Error',
+                    message: 'Error communicating with AI service',
+                    details: error.message
+                },
+                { status: error.status || 500 }
+            );
+        }
+
         return NextResponse.json(
-            { error: 'Failed to analyze resume' },
+            {
+                error: 'Internal Server Error',
+                message: 'An unexpected error occurred',
+                details: error instanceof Error ? error.message : 'Unknown error'
+            },
             { status: 500 }
         );
     }

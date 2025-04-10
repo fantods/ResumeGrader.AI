@@ -1,6 +1,6 @@
 # ResumeGrader.AI 📝
 
-![ResumeGrader.AI](https://raw.githubusercontent.com/yourusername/resume-grader/main/public/demo.png)
+![ResumeGrader.AI](https://raw.githubusercontent.com/yourusername/resume-grader/main/public/logo.png)
 
 ResumeGrader.AI is an intelligent resume analysis tool that helps job seekers optimize their resumes for specific job postings. Using Claude's advanced AI capabilities, it provides detailed feedback, matching scores, and actionable recommendations.
 

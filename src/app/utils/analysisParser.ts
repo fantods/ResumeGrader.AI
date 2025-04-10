@@ -1,57 +1,59 @@
 import { ClaudeResponse, ParsedAnalysis } from '../types/analysis';
 
 export function parseClaudeResponse(response: ClaudeResponse): ParsedAnalysis {
-    const text = response.content[0].text;
-    const sections = text.split('\n\n');
+  const text = response.content[0].text;
+  const sections = text.split('\n\n');
 
-    // Extract match percentage
-    const matchPercentageMatch = text.match(/Match Percentage: (\d+)%/);
-    const matchPercentage = matchPercentageMatch ? parseInt(matchPercentageMatch[1]) : 0;
+  const matchPercentageMatch = text.match(/Match Percentage: (\d+)%/);
+  const matchPercentage = matchPercentageMatch ? parseInt(matchPercentageMatch[1]) : 0;
 
-    // Helper function to parse sections
-    const parseSectionContent = (content: string): { category: string; points: string[] } => {
-        const lines = content.split('\n');
-        const category = lines[0].replace(/^\d+\.\s*/, '').replace(/:$/, '');
-        const points = lines.slice(1).filter(line => line.trim().startsWith('-'))
-            .map(line => line.replace(/^-\s*/, '').trim());
-        return { category, points };
-    };
+  const parseSectionContent = (content: string): { category: string; points: string[] } => {
+    const lines = content.split('\n');
+    const category = lines[0].replace(/^\d+\.\s*/, '').replace(/:$/, '');
+    const points = lines
+      .slice(1)
+      .filter((line) => line.trim().startsWith('-'))
+      .map((line) => line.replace(/^-\s*/, '').trim());
+    return { category, points };
+  };
 
-    // Parse matching skills
-    const matchingSkillsSection = sections.find(s => s.includes('Key Matching Skills and Experience:'));
-    const matchingSkills = matchingSkillsSection
-        ? matchingSkillsSection
-            .split(/\d+\.\s+/)
-            .slice(1)
-            .map(section => parseSectionContent(section))
-        : [];
+  const matchingSkillsSection = sections.find((s) =>
+    s.includes('Key Matching Skills and Experience:')
+  );
+  const matchingSkills = matchingSkillsSection
+    ? matchingSkillsSection
+      .split(/\d+\.\s+/)
+      .slice(1)
+      .map((section) => parseSectionContent(section))
+    : [];
 
-    // Parse missing requirements
-    const missingRequirementsSection = sections.find(s => s.includes('Missing Important Keywords and Requirements:'));
-    const missingRequirements = missingRequirementsSection
-        ? missingRequirementsSection
-            .split(/\d+\.\s+/)
-            .slice(1)
-            .map(section => parseSectionContent(section))
-        : [];
+  const missingRequirementsSection = sections.find((s) =>
+    s.includes('Missing Important Keywords and Requirements:')
+  );
+  const missingRequirements = missingRequirementsSection
+    ? missingRequirementsSection
+      .split(/\d+\.\s+/)
+      .slice(1)
+      .map((section) => parseSectionContent(section))
+    : [];
 
-    // Parse recommendations
-    const recommendationsSection = sections.find(s => s.includes('Specific Recommendations for Improvement:'));
-    const recommendations = recommendationsSection
-        ? recommendationsSection
-            .split(/\d+\.\s+/)
-            .slice(1)
-            .map(section => parseSectionContent(section))
-        : [];
+  const recommendationsSection = sections.find((s) =>
+    s.includes('Specific Recommendations for Improvement:')
+  );
+  const recommendations = recommendationsSection
+    ? recommendationsSection
+      .split(/\d+\.\s+/)
+      .slice(1)
+      .map((section) => parseSectionContent(section))
+    : [];
 
-    // Extract summary (last paragraph)
-    const summary = sections[sections.length - 1].trim();
+  const summary = sections[sections.length - 1].trim();
 
-    return {
-        matchPercentage,
-        matchingSkills,
-        missingRequirements,
-        recommendations,
-        summary,
-    };
+  return {
+    matchPercentage,
+    matchingSkills,
+    missingRequirements,
+    recommendations,
+    summary,
+  };
 }

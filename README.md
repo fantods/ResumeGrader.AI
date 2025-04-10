@@ -30,22 +30,26 @@ ResumeGrader.AI is an intelligent resume analysis tool that helps job seekers op
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/yourusername/resume-grader.git
 cd resume-grader
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Create a `.env.local` file in the root directory:
+
 ```env
 ANTHROPIC_API_KEY=your_api_key_here
 ```
 
 4. Run the development server:
+
 ```bash
 npm run dev
 ```

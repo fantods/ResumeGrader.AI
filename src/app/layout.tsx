@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
-import QueryProvider from "./providers/QueryProvider";
-import "./globals.css";
+import type { Metadata } from 'next';
+import QueryProvider from './providers/QueryProvider';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "ResumeGrader.AI",
-  description: "Helps you get your dream job by grading your resume and cover letter.",
+  title: 'ResumeGrader.AI',
+  description: 'Helps you get your dream job by grading your resume and cover letter.',
 };
 
 export default function RootLayout({
@@ -15,9 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <QueryProvider>
-          {children}
-        </QueryProvider>
+        <QueryProvider>{children}</QueryProvider>
       </body>
     </html>
   );

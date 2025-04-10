@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import QueryProvider from "./providers/QueryProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Modern Next.js App",
-  description: "A modern Next.js application built with TypeScript and React",
+  title: "ResumeGrader.AI",
+  description: "Helps you get your dream job by grading your resume and cover letter.",
 };
 
 export default function RootLayout({
@@ -14,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        {children}
+        <QueryProvider>
+          {children}
+        </QueryProvider>
       </body>
     </html>
   );

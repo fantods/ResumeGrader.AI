@@ -1,0 +1,34 @@
+EXPERIENCE
+Company - Remote
+Al Engineer Il
+Oct 2024 - Present
+• Built a custom RAG service that uses semantic search and LLM search optimization to improve retrieval accuracy by >50% compared to alternative RAG services
+• Led development of a content generation platform that allows users to quickly author and edit educational content with the assistance of LLMs and Agentic AI
+• Provided technical leadership by leading educational presentations on AI and authoring internal blog posts
+• Created CI/CD pipelines to automate the testing and deployment of APIs and standardize code style
+• Designed and maintained production ML infrastructure using AWS CDK
+Al Engineer 1
+Oct 2022 - Oct 2024
+• Reduced cloud costs by 40% by rebuilding docker images to transition from AMD64 to ARM64 CPU architecture and redesigning infrastructure to improve efficiency
+• Improved NLP inference model accuracy from 20% to 80% by applying transformations to training data
+• Built and deployed ML models that assess fluency and soft skills by performing inference on written language and multimodal (audio, video) features
+• Increased model transparency by creating docker images that enable inference models to serve realtime model explanations using SageMaker Clarify
+• Built a model training pipeline that allows engineers to fine-tune models, perform hyperparameter optimization using WandB, and deploy NLP inference models to AWS SageMaker
+Data Analyst
+May 2022 - Oct 2022
+• Created data processing pipelines that extract, transform, and organize data using Python and SAS
+• Developed PowerBI dashboard templates that visualize assessment metrics
+PROJECTS
+Text Counterfactuals
+github.com/myname/project
+• Developed a text counterfactual generation pipeline that creates counterfactuals by generating model explanations using SHAP and creating alternatives using a masked language model
+• Created cloud infrastructure with CDK to deploy a live demonstration using a Streamlit frontend, Lambda functions, and SageMaker endpoints
+• Live demonstration available at name.com/project
+SKILLS
+• Languages: Python, C++, SQL, SAS, Bash
+• Technologies: AWS; Containerization (eg. Docker); Weights and Biases (WandB); Visualization (PowerBI);
+FastAPI; flask; Git; Data Science and Machine Learning Libraries (SciKit-Learn, PyTorch, HuggingFace, pandas, NumPy)
+EDUCATION
+A University, Bachelor of Education A University, Bachelor of Science, Physics
+July, 2022
+April, 2021

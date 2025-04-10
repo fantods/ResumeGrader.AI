@@ -7,9 +7,6 @@ ResumeGrader.AI is an intelligent resume analysis tool that helps job seekers op
 - **Instant Resume Analysis**: Get immediate feedback on how well your resume matches a job posting
 - **Smart Matching**: Advanced AI-powered analysis of skills, experience, and keywords
 - **Detailed Recommendations**: Receive specific suggestions for improvement
-- **User-Friendly Interface**: Clean, modern UI with both light and dark modes
-- **Multiple Input Methods**: Support for both text paste and file upload
-- **Secure Processing**: All analysis is performed server-side for data security
 
 ## Stack 🛠️
 

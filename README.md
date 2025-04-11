@@ -2,12 +2,16 @@
 
 ResumeGrader.AI is an intelligent resume analysis tool that helps job seekers optimize their resumes for specific job postings. Using Claude's advanced AI capabilities, it provides detailed feedback, matching scores, and actionable recommendations.
 
+![image info](./examples/example.png)
+
+
+
 ## Features ✨
 
 - **Instant Resume Analysis**: Get immediate feedback on how well your resume matches a job posting
 - **Smart Matching**: Advanced AI-powered analysis of skills, experience, and keywords
 - **Detailed Recommendations**: Receive specific suggestions for improvement
-
+  
 ## Stack 🛠️
 
 - [Next.js 14](https://nextjs.org/) - React framework with App Router
